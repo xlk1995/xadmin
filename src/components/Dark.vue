@@ -3,7 +3,7 @@
     <div class="i-carbon-sun dark:i-carbon-moon"></div>
   </button>
 </template>
-<script>
+<script lang="ts">
 export default {
 
 }

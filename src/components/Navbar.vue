@@ -50,8 +50,9 @@ const router = useRouter()
 
             <button type="button" @click="router.push('/login')" class="flex items-center focus:outline-none"
               aria-label="toggle profile dropdown">
-              <div class="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
-                <img src="../assets/login/ranshu.png" class="object-cover w-full h-full" alt="avatar">
+              <div class="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full flex items-center justify-center ">
+                <!-- <img src="../assets/login/ranshu.png" class="object-cover w-full h-full" alt="avatar"> -->
+                退出
               </div>
 
               <h3 class="mx-2 text-sm font-medium text-gray-700 dark:text-gray-200 md:hidden">Khatab wedaa</h3>

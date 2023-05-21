@@ -1,0 +1,84 @@
+// reset.scss
+
+// 盒模型重置
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+em,
+strong,
+sub,
+sup,
+b,
+i,
+u,
+strike,
+small,
+big,
+pre,
+code,
+del,
+dfn,
+kbd,
+samp,
+var,
+address,
+cite,
+abbr,
+acronym,
+q,
+ins,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+// 列表样式重置
+ul,
+ol {
+  list-style: none;
+}
+
+// 文本样式重置
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// 全局样式重置
+html,
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}

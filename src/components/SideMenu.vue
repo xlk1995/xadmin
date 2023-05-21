@@ -1,17 +1,18 @@
 <script setup lang="ts">
 // const { t } = useI18n()
-const pages: Record<string, any> = import.meta.glob('~/pages/*.vue', {eager: true})
-console.log(pages);
+const pages: Record<string, any> = import.meta.glob("~/pages/*.vue", {
+  eager: true,
+});
 const menus = Object.keys(pages)
-  .map(k => ({k, v: pages[k].default}))
-  .filter(page => page.v.menu)
-  .map(page => ({
+  .map((k) => ({ k, v: pages[k].default }))
+  .filter((page) => page.v.menu)
+  .map((page) => ({
     name: page.v.menu,
-    url: page.k.replace('..pages', '').replace('.vue', ''),
-    icon: page.v.icon
-  }))
+    url: page.k.replace("/src/pages/", "").replace(".vue", ""),
+    icon: page.v.icon,
+  }));
 
-  const courses = reactive(menus)
+const courses = reactive(menus);
 
 // const courses = reactive([
 //   { name: 'Vue全家桶', icon: '', url: '/vue' },
@@ -38,21 +39,21 @@ const menus = Object.keys(pages)
       <div
         class="hidden lg:flex xl:hidden items-center grow-0 shrink-0 relative cursor-pointer text-white py-2 px-3"
       >
-        <span
+        <!-- <span
           class="inline-flex justify-center items-center w-6 h-6 cursor-pointer"
           ><svg viewBox="0 0 24 24" width="24" height="24" class="inline-block">
             <path
               fill="currentColor"
               d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"
             ></path></svg
-        ></span>
+        ></span> -->
       </div>
-      <div class="flex-1 px-3">
-        <b class="font-black">Smarty Admin</b>
+      <div class="flex-1 px-3 text-center">
+        <b class="font-black">Admin</b>
       </div>
     </div>
     <div>
-      <p class="p-3 text-xs uppercase text-gray-400">General</p>
+      <!-- <p class="p-3 text-xs uppercase text-gray-400">General</p> -->
       <ul>
         <li>
           <a
@@ -77,22 +78,6 @@ const menus = Object.keys(pages)
               ><i class="i-mdi-table"></i></span
             ><span class="grow text-gray-300">{{ item.name }}</span>
           </a>
-        </li>
-      </ul>
-      <p class="p-3 text-xs uppercase text-gray-400">About</p>
-      <ul>
-        <li>
-          <a
-            href="https://github.com/smarty-team/smarty-admin"
-            target="_blank"
-            class="flex cursor-pointer dark:hover:bg-gray-700/50 hover:bg-gray-600 hover:bg-opacity-50 py-2"
-            ><span
-              class="inline-flex justify-center items-center w-12 h-6 flex-none text-gray-300"
-              ><i class="i-mdi-github"></i></span
-            ><span class="grow text-gray-300">GitHub</span>
-            <!--v-if-->
-          </a>
-          <!--v-if-->
         </li>
       </ul>
     </div>

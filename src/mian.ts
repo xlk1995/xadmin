@@ -5,6 +5,8 @@
 
 import { createApp } from "vue";
 import App from "./App.vue";
+import '~/styles/reset.scss';
+
 
 // 引入unocss
 import "uno.css";

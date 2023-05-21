@@ -6,7 +6,7 @@
       >
         <navbar></navbar>
         <side-menu></side-menu>
-        <div id="main" class="">
+        <div id="main" style="height: calc(100vh - 96px);">
           <router-view />
         </div>
         <footer-content></footer-content>
