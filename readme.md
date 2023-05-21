@@ -368,7 +368,59 @@ pnpm i @vueuse/core @vueuse/head
 
 
 
-
+```
+.
+├── index.html
+├── jest.config.js
+├── locales
+│   ├── en.json
+│   └── zh-CN.json
+├── package.json
+├── shims.vue.d.ts
+├── src
+│   ├── App.vue
+│   ├── __test__
+│   │   ├── add.spec.ts
+│   │   └── delay.spec.ts
+│   ├── auto-imports.d.ts
+│   ├── components
+│   │   ├── Card.vue
+│   │   ├── Dark.vue
+│   │   ├── FooterContent.vue
+│   │   ├── Language.vue
+│   │   ├── Navbar.vue
+│   │   └── SideMenu.vue
+│   ├── components.d.ts
+│   ├── composables
+│   │   └── dark.ts
+│   ├── layouts
+│   │   ├── default.vue
+│   │   └── login.vue
+│   ├── mian.ts
+│   ├── modules
+│   │   ├── i18n.ts
+│   │   ├── nprogress.ts
+│   │   ├── pinia.ts
+│   │   └── types.ts
+│   ├── pages
+│   │   ├── [...all].vue
+│   │   ├── dashboard
+│   │   │   ├── components
+│   │   │   │   └── abc.vue
+│   │   │   └── index.vue
+│   │   ├── login.vue
+│   │   ├── react.vue
+│   │   └── vue.vue
+│   ├── stores
+│   │   └── user.ts
+│   ├── styles
+│   │   └── reset.scss
+│   └── utils
+│       ├── add.ts
+│       └── delay.ts
+├── tsconfig.json
+└── vite.config.ts
+```
 
 
 
