@@ -423,8 +423,113 @@ pnpm i @vueuse/core @vueuse/head
 ```
 
 
+git 
+
+```
+git remote -v
+git remote add upstream git@github.com:xlk1995/xadmin.git
+git pull upstream master
+```
+### 命名方式
+#### 组件命名
+
+大驼峰
+
+```
+<Pascalcase>
+```
+
+#### 属性定义
+
+使用更细节的方式
+
+```
+
+// 推荐
+const props = definedProps({
+  foo: {
+    type: String,
+    default: ''
+  }
+
+})
+
+// 不推荐
+
+const props = definedProps(['foo'])
+```
+
+#### 事件定义
+
+自定义事件的名称会被自动转换， 我们通常使用驼峰做事件名，监听时需要转换成肉串方式
+
+```
+// MyComponent
+<button @click="$emit('someEvent')">click me </button>
+
+<MyComponent @some-event="callback">
+```
+
+```
+const emit = defineEmits(['someEvent'])
+emit('someEvent')
+
+// v-model:xxx
+// @update:some-event
+```
+
+#### 透传特性
+
+在vue3中，没有明确在组件的props和emits中声明的特性或事件监听器称为透传特性， 以前叫非属性特性。如style，class，id， 只有单根的时候，透传特性自动添加到根上
+
+```
+<MyButton class="large"/>
+
+<button class="large">
+```
+
+如果不想继承， 可以inheritAttrs禁止使用
+
+```
+inheritAttrs: false 
+```
+
+使用 `useAttrs获取`
+
+```
+import {useAttrs} from "vue"
+const attrs = useAttrs()
+```
+#### 插槽
+
+vue3移除scopeSlots， 只需要访问slots对象， 包括 `default`插槽都是函数形式
+
+```
+import {useSlots} from 'vue'
+const slots = useSlots()
+const defaultSlots = slots.defaults()
+```
+
+#### provide/inject
+
+```
+import {provide} from 'vue'
+provide(key, value)
+```
+
+```
+import {inject} from 'vue'
+inject(key, value)
+```
+
+### Composables
+
+利用Composition Api封装的可重用的逻辑状态被称为 composables
+
+约定 composables函数命名时加上use前缀
 
 
+### 组件通信
 
 
 
